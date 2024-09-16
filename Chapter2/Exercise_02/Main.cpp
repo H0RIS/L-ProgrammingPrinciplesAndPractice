@@ -4,11 +4,11 @@ Write a program in C++ that converts from miles to kilometers. Your program shou
 */
 import std;
 
-constexpr double m_km_conv_rate{ 1.609 };
+constexpr double miles_km_conv_rate{ 1.609 };
 
 double miles_to_km(double miles)
 {
-    return miles * m_km_conv_rate;
+    return miles * miles_km_conv_rate;
 }
 
 int main()
