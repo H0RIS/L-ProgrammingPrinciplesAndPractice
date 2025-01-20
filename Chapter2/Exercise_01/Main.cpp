@@ -14,7 +14,10 @@
  ints a and b we have a/b ∗ b + a%b == a.
 
  3.
-
+ Get the ‘‘repeated word detection program’’ to run. Test it with the sentence She she
+ laughed "he he he!" because what he did did not look very ver y good good. How many
+ repeated words were there? Why? What is the definition of word used here? What
+ is the definition of repeated word? (For example, is She she a repetition?)
 */
 
 import std;
@@ -34,8 +37,8 @@ int main()
         double age{ -1 };
         std::cin >> first_name >> age;
         std::cout << "Hello, " << first_name << "(age " << age * 12.0 << " months)\n";
-    }
     break;
+    }
     case 2:
     {
         std::cout << "Please enter an int value: ";
@@ -50,10 +53,22 @@ int main()
             << "\nsquare root of n == " << std::sqrt(n)
             << "\nn mod 2 == " << n % 2
             << '\n';
+        break;
     }
+    case 3:
+    {
+        std::string previous{};
+        std::string current{};
+        while (std::cin >> current)
+        {
+            if (current == previous)
+            {
+                std::cout << "Repeated word: " << current << std::endl;
+            }
+            previous = current;
+        }
         break;
-    case 3: std::cout << "You entered three." << std::endl;
-        break;
+    }
     case 4: std::cout << "You entered four." << std::endl;
         break;
     case 5: std::cout << "You entered five." << std::endl;
