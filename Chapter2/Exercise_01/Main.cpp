@@ -34,6 +34,15 @@ int Main()
     cOut << S << '\n';
 }
 
+5.
+Run this program with a variety of inputs:
+ • Small values (e.g., 2 and 3).
+ • Large values (larger than 127, larger than 1000).
+ • Neg ative values.
+ • 56,89, and 128.
+ • Non-integer values (e.g., 56.9 and 56.2).
+ You’ll find that many inputs produce ‘‘unreasonable’’ results when converted. Basi
+cally, we are trying to put a gallon into a pint pot (about 4 liters into a 500ml glass).
 */
 
 import std;
@@ -53,7 +62,7 @@ int main()
         double age{ -1 };
         std::cin >> first_name >> age;
         std::cout << "Hello, " << first_name << "(age " << age * 12.0 << " months)\n";
-    break;
+        break;
     }
     case 2:
     {
@@ -93,8 +102,20 @@ int main()
         }
         break;
     }
-    case 5: std::cout << "You entered five." << std::endl;
-        break;
+    case 5:
+    {
+        double d = 0;
+        while (std::cin >> d)				// repeat the statements below as long as we type in numbers
+        {
+            int i = d;						// try to squeeze a floating-point value into an integer value
+            char c = i;						// try to squeeze an integer into a char
+            std::cout << "d==" << d			// the original double
+                << " i==" << i				// double converted to int
+                << " c==" << c				// int value of char
+                << " char(" << c << ")\n";	// the char
+        }
+    break;
+    }
     default:
         break;
     }
