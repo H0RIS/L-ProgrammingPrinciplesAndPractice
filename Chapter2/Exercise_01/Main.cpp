@@ -18,13 +18,29 @@
  laughed "he he he!" because what he did did not look very ver y good good. How many
  repeated words were there? Why? What is the definition of word used here? What
  is the definition of repeated word? (For example, is She she a repetition?)
+
+ 4.
+ Compile the ‘‘Goodbye, cruel world!’’ program and examine the error messages.
+ Did the compiler find all the errors? What did it suggest as the problems? Did the
+ compiler get confused and diagnose more than four errors? Remove the errors one
+ by one, starting with the lexically first, and see how the error messages change (and
+ improve).
+
+import std;
+
+int Main()
+{
+    STRING s = "Goodbye, cruel world! ";
+    cOut << S << '\n';
+}
+
 */
 
 import std;
 
 int main()
 {
-    std::cout << "Enter which Try This you want to run:\n";
+    std::cout << "Enter which Try This you want to run(1-5):\n";
     int num{};
     std::cin >> num;
 
@@ -69,8 +85,14 @@ int main()
         }
         break;
     }
-    case 4: std::cout << "You entered four." << std::endl;
+    case 4:
+    {
+        {
+            std::string s = "Goodbye, cruel world! ";
+            std::cout << s << '\n';
+        }
         break;
+    }
     case 5: std::cout << "You entered five." << std::endl;
         break;
     default:
