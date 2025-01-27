@@ -12,6 +12,11 @@ gram is easier to write, understand, and modify? Why?
 3.
 The character 'b' is char(’a’+1), 'c' is char(’a’+2), etc. Use a loop to write out a table of
 characters with their corresponding integer values.
+
+4.
+Rewrite the character value example from the previous TRY THIS to use a for-state
+ment. Then modify your program to also write out a table of the integer values for
+ uppercase letters and digits.
 */
 
 import std;
@@ -55,6 +60,7 @@ int main()
         }
         break;
     }
+
     case 2:
     {
         constexpr double y_to_d{ 0.0065 };
@@ -97,22 +103,32 @@ int main()
 
         break;
     }
+
     case 3:
     {
-        for (size_t i = 'a'; i <='z'; i++)
+        int i{ 'a' };
+        while (i <= 'z')
+        {
+            std::cout << (char)i << '\t' << i << '\n';
+            i++;
+        }
+        break;
+    }
+
+    case 4:
+    {
+        for (size_t i = '0'; i <= 'z'; i++)
         {
             std::cout << (char)i << '\t' << i << '\n';
         }
         break;
     }
-    case 4:
-    {
-        break;
-    }
+
     case 5:
     {
         break;
     }
+
     case 6:
     {
         break;
