@@ -8,6 +8,10 @@ the Web.
 Rewrite your currency converter program from the previous TRYTHIS to use a
 switch-statement. Add a conversion from Swiss francs.Which version of the pro
 gram is easier to write, understand, and modify? Why?
+
+3.
+The character 'b' is char(’a’+1), 'c' is char(’a’+2), etc. Use a loop to write out a table of
+characters with their corresponding integer values.
 */
 
 import std;
@@ -95,6 +99,10 @@ int main()
     }
     case 3:
     {
+        for (size_t i = 'a'; i <='z'; i++)
+        {
+            std::cout << (char)i << '\t' << i << '\n';
+        }
         break;
     }
     case 4:
