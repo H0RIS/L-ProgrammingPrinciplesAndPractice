@@ -17,9 +17,23 @@ characters with their corresponding integer values.
 Rewrite the character value example from the previous TRY THIS to use a for-state
 ment. Then modify your program to also write out a table of the integer values for
  uppercase letters and digits.
+
+ 5.
+ Implement square() without using the multiplication operator; that is, do the x∗x by
+ repeated addition (start a variable result at 0 and add x to it x times). Then run some
+ version of ‘‘the first program’’ using that square().
+
+ 6.
+ Write a program that ‘‘bleeps’’ out words that you don’t like; that is, you read in
+ words using cin and print them again on cout. If a word is among a few you have
+ defined, you write out BLEEP instead of that word. Start with one ‘‘disliked word’’
+ such as
+ string disliked = "Broccoli";
+ When that works, add a few more.
 */
 
 import std;
+#include "Square_tt5.h"
 
 int main()
 {
@@ -126,11 +140,38 @@ int main()
 
     case 5:
     {
+        std::cout << "Enter a number to square: ";
+        int num{};
+        std::cin >> num;
+        std::cout << num << " squared is " << Square(num);
+
         break;
     }
 
     case 6:
     {
+        bool contains{ false };
+        std::string temp{};
+        std::vector<std::string> disliked{"apple", "banana", "cherry"};
+        while (std::cin >> temp)
+        {
+            for (size_t i = 0; i < disliked.size(); i++)
+            {
+                if (disliked[i] == temp)
+                {
+                    contains = true;
+                }
+            }
+            if (contains)
+            {
+                std::cout << " BLEEP\n";
+            }
+            else
+            {
+                std::cout << temp << '\n';
+            }
+            contains = false;
+        }
         break;
     }
     default:
